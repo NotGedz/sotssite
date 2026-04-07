@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i input.css -o output.css --minify",
+    "dev:css": "tailwindcss -i input.css -o output.css --watch"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.25.0",
+    "@tailwindcss/cli": "^4.2.2",
+    "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "sticky-sidebar": "^3.3.1"
+  }
+}

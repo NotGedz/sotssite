@@ -1,0 +1,391 @@
+
+.basiic {
+    font-family: 'basiic', sans-serif;
+}
+.rom {
+    font-family: 'rom', serif;
+}
+
+@font-face {
+    font-family: "basiic";
+    src: url(fonts/basiic.ttf);
+
+}
+
+@font-face {
+    font-family: "rom";
+    src: url("fonts/RomanceA.ttf");
+}
+
+h1,h2,h3,h4{
+    font-family: "rom";
+    text-decoration:normal
+}
+h1{font-size: 4rem;
+}
+h2{font-size: 3rem;}
+h3{font-size: 2rem;}
+h4{font-size: 1.5rem;}
+:root {
+
+  --text-color: #222222;
+  --surface: #c0c0c0;
+  --button-highlight: #ffffff;
+  --button-face: #dfdfdf;
+  --button-shadow: #808080;
+  --window-frame: #0a0a0a;
+  --dialog-blue: #000080;
+  --dialog-blue-light: #1084d0;
+  --dialog-gray: #808080;
+  --dialog-gray-light: #b5b5b5;
+  --link-blue: #0000ff;
+
+
+  --element-spacing: 8px;
+  --grouped-button-spacing: 4px;
+  --grouped-element-spacing: 6px;
+  --radio-width: 12px;
+  --checkbox-width: 13px;
+  --radio-label-spacing: 6px;
+  --range-track-height: 4px;
+  --range-spacing: 10px;
+
+  --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
+  --radio-total-width: calc(var(--radio-total-width-precalc));
+  --radio-left: calc(-1 * var(--radio-total-width-precalc));
+  --radio-dot-width: 4px;
+  --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
+  --radio-dot-left: calc(
+    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
+        --radio-dot-width
+      ) / 2
+  );
+
+  --checkbox-total-width-precalc: var(--checkbox-width) +
+    var(--radio-label-spacing);
+  --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
+  --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
+  --checkmark-width: 7px;
+  --checkmark-left: 3px;
+
+
+  --border-width: 1px;
+  --border-raised-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-highlight);
+  --border-raised-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-face);
+  --border-sunken-outer: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--window-frame);
+  --border-sunken-inner: inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-shadow);
+  --default-button-border-raised-outer: inset -2px -2px var(--window-frame), inset 1px 1px var(--window-frame);
+  --default-button-border-raised-inner: inset 2px 2px var(--button-highlight), inset -3px -3px var(--button-shadow), inset 3px 3px var(--button-face);
+  --default-button-border-sunken-outer: inset 2px 2px var(--window-frame), inset -1px -1px var(--window-frame);
+  --default-button-border-sunken-inner: inset -2px -2px var(--button-highlight), inset 3px 3px var(--button-shadow), inset -3px -3px var(--button-face);
+
+
+  --border-window-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-face);
+  --border-window-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-highlight);
+
+  --border-field: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+    inset 2px 2px var(--window-frame);
+  --border-status-field: inset -1px -1px var(--button-face), inset 1px 1px var(--button-shadow);
+
+  --border-tab: inset -1px 0 var(--window-frame),
+    inset 1px 1px var(--button-face),
+    inset -2px 0 var(--button-shadow),
+    inset 2px 2px var(--button-highlight)
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: visible;
+     font-size: 18px!important;
+}
+
+header{
+    overflow: visible;
+}
+nav{
+    overflow: visible;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("img/bg.gif");
+      
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  margin: 0;
+    overflow:visible
+}
+
+.banner {
+    height: 300px;
+    background-image: url("img/banner.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    }
+.navbar { 
+  
+  background-image: linear-gradient(to right,var(--dialog-blue), var(--dialog-blue-light));
+  box-sizing: border-box;
+  border: none;
+  height: min-content;
+  text-shadow: 0 0 var(--text-color);
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  border-radius: 0;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
+
+    z-index: 1000;
+}
+
+
+
+
+
+.navbar li {
+   
+    padding: 0; 
+    display: flex;
+    align-items: stretch; 
+    box-sizing: border-box;
+
+    background: var(--surface);
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    
+   
+    min-height: 100%;
+    width: 100%;
+    
+ 
+    padding: 0 12px; 
+    
+    box-sizing: border-box;
+}
+
+
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: var(--surface);
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    padding: 4px 8px; 
+    width: 40px;      
+    height: 34px;     
+}
+
+.hamburger .bar {
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-color);
+    margin: 4px 0;   
+    display: block;
+}
+
+.hamburger:active,.navbar li:active {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+}
+
+
+
+@media (max-width: 1000px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        border: none;
+        text-shadow: 0 0 var(--text-color);
+        background: var(--surface);
+        box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+        border-radius: 0;
+       height: 2rem;
+        padding: 0 12px;
+
+
+
+    }
+    .nav-links {
+        top: 100%;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        flex-basis: 100%;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .nav-links.active {
+        display: flex;
+           min-width: 100%;
+    }
+    .nav-links li {
+        text-align: center;
+           min-width: 100%;
+    }
+
+   .main-content, .secondary-content {
+        width: 100%!important;; 
+        flex-direction:column;
+    }
+    .content-wrapper{
+        flex-direction: column;
+        width: 95% !important; /* Залишаємо лише 5% на відступи з боків */
+        max-width: 100% !important;
+        flex-direction: column;
+    
+    }
+}
+
+
+.content {
+    flex: 1;
+}
+
+.main-content{
+    width:70%;
+}
+.secondary-content{
+    width:30%;
+}
+.content-wrapper{
+    width: 60%;
+}
+
+.flower-list{
+     list-style-image: url("img/flower.png");
+    padding-left: 1.5em;
+}
+
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    text-decoration: none; 
+    box-sizing: border-box;
+    border: none;
+    background: var(--surface);
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
+}
+
+.download-button:active {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+   
+}
+
+.news-preview-item {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    margin-bottom: 10px;
+      overflow: visible;
+}
+
+.news-sidebar {
+    min-width: 100%; 
+}
+
+.news-preview-item{
+    min-width: width 100%;
+}
+
+.news-preview-item img {
+    transition: transform 0.3s ease;
+}
+
+.news-preview-item:hover img {
+    transform: scale(1.1);
+}
+
+.dark-text{
+    color:var(--text-color)
+}
+
+.news-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    width: 100%;
+    overflow:visible
+}
+
+.news-wrapper .window {
+    
+    flex: 1 1 300px; 
+    max-width: 100%; 
+    display: flex;
+    flex-direction: column;
+    overflow:visible
+}
+
+.window-body{
+ overflow:visible   
+}
+
+.fixed-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+}
+
+
+.footer {
+  background-image: linear-gradient(to right,var(--dialog-blue), var(--dialog-blue-light));
+  box-sizing: border-box;
+  overflow: visible !important;
+  border: none;
+  text-shadow: 0 0 var(--text-color);
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  border-radius: 0;
+
+    color: white;
+    text-align: center;
+    padding-bottom: 0px;
+}
+
