@@ -24,7 +24,6 @@ if ($result && mysqli_num_rows($result) > 0) {
         $downloadLink = preg_match('/^https?:\/\//i', $link) ? $link : "https://" . ltrim($link, "/");
     }
 } else {
-    // Якщо в БД порожньо, можна логувати помилку
     error_log("SOTS: No download links found in database.");
 }
 ?>
