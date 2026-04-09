@@ -1,5 +1,5 @@
 <?php
-include("./php/connection.php");
+include($_SERVER['DOCUMENT_ROOT'] ."/sots/php/connection.php");
 
 // Отримуємо номер посту з URL (напр. news.php?id=1)
 // Використовуємо (int) для захисту від SQL-ін'єкцій
@@ -21,11 +21,11 @@ if (!$post) {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include("./php/head.php")?>
+<?php include($_SERVER['DOCUMENT_ROOT'] ."/sots/php/head.php")?>
 
 <body class="text-white site-container basiic">
 
-    <?php include("./php/banner-nav.php"); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] ."/sots/php/banner-nav.php"); ?>
 
     <main class="content flex justify-center w-full">
         <div class="content-wrapper flex flex-col items-center max-w-4xl w-full p-4">
@@ -61,6 +61,6 @@ if (!$post) {
         </div>
     </main>
 
-    <?php include("footer.php"); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] ."/sots/php/footer.php"); ?>
 </body>
 </html>
