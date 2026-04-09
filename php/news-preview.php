@@ -3,10 +3,10 @@
     <h3 class="text-center text-xl font-bold mb-2">Latest Updates</h3>
 
     <?php
-    include("./php/connection.php");
+    include($_SERVER['DOCUMENT_ROOT'] . "/sots/php/connection.php");
 
     // Запит: беремо останні 5 новин за номером ordr
-    $sql = "SELECT link, previewimglink, date, ordr FROM SIteNewsLinks ORDER BY ordr DESC LIMIT 5";
+    $sql = "SELECT link, previewimglink, date, ordr FROM SiteNewsLinks ORDER BY ordr DESC LIMIT 5";
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0):
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="window-body">
-        <a href="news.php?id=<?= $row['ordr'] ?>" class="news-preview-item flex items-center ">
+        <a href="php/news.php?id=<?= $row['ordr'] ?>" class="news-preview-item flex items-center ">
             
             <div class="w-16 h-16 flex-shrink-0 overflow-visible mr-3">
                 <img src="<?= htmlspecialchars($row['previewimglink']) ?>" 
