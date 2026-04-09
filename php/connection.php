@@ -1,22 +1,16 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "SOTS";
+$conn = mysqli_init();
+// TiDB Cloud вимагає SSL
+mysqli_ssl_set($conn, NULL, NULL, NULL, NULL, NULL); 
 
-// Вмикаємо звітність про помилки для MySQLi
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$host = getenv('TIDB_HOST');
+$user = getenv('TIDB_USER');
+$password = getenv('TIDB_PASSWORD');
+$dbname = getenv('TIDB_DB');
+$port = 4000; // Стандартний порт TiDB
 
-try {
-    $conn = new mysqli($host, $user, $pass, $db);
-    
-    // Встановлюємо правильне кодування
-    $conn->set_charset("utf8mb4");
-    
-    // echo "З'єднання встановлено!"; 
-} catch (mysqli_sql_exception $e) {
-    // Не виводь деталі помилки користувачу на реальному сайті (security risk)
-    error_log($e->getMessage());
-    die("Помилка підключення до бази даних.");
+mysqli_real_connect($conn, $host, $user, $password, $dbname, $port, NULL, MYSQLI_CLIENT_SSL);
+
+if (mysqli_connect_errno()) {
+    die("Помилка підключення: " . mysqli_connect_error());
 }
-?>
