@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include("./php/connection.php"); // Перевір, чи цей файл лежить поруч
+include($_SERVER['DOCUMENT_ROOT'] . "/sots/php/connection.php"); // Перевір, чи цей файл лежить поруч
 
 $sql = "SELECT * FROM ImageLinks ORDER BY ordr DESC";
 $result = mysqli_query($conn, $sql);
@@ -10,10 +10,10 @@ $result = mysqli_query($conn, $sql);
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include("./php/head.php"); ?>
+<?php include($_SERVER['DOCUMENT_ROOT']  ."/sots/php/head.php"); ?>
 
 <body class="text-white site-container basiic">
-    <?php include("./php/banner-nav.php"); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . "/sots/php/banner-nav.php"); ?>
 
     <main class="content flex justify-center w-full">
         <div class="content-wrapper flex flex-col items-center max-w-4xl w-full p-4">
@@ -53,6 +53,6 @@ $result = mysqli_query($conn, $sql);
         
     </main>
 
-    <?php include("./php/footer.php"); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] ."/sots/php/footer.php"); ?>
 </body>
 </html>
