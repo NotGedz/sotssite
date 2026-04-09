@@ -1,8 +1,8 @@
 <header class="banner bg-cover bg-center flex items-center justify-center">
     <div class="mclogo">
         <picture>
-            <source srcset="img/mc-small.png" media="(max-width: 600px)">
-            <img src="img/mc.png" alt="Minecraft SOTS Logo">
+            <source srcset="/sots/img/mc-small.png" media="(max-width: 600px)">
+            <img src="/sots/img/mc.png" alt="Minecraft SOTS Logo">
         </picture>
     </div>
 </header>
